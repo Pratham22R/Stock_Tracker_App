@@ -2,8 +2,7 @@
 import Footer from "@/components/forms/Footer";
 import InputField from "@/components/forms/inputField";
 import { Button } from "@/components/ui/button";
-import { signInWithEmail, signUpWithEmail } from "@/lib/actions/auth.actions";
-import { register } from "module";
+import { signInWithEmail } from "@/lib/actions/auth.actions";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -15,7 +14,6 @@ const SignIn = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    control,
   } = useForm<SignInFormData>({
     defaultValues: {
       email: "",
