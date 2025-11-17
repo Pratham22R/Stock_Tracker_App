@@ -13,14 +13,15 @@ import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { LogOutIcon } from "lucide-react";
 import Navitems from "./Navitems";
-const UserDropdown = () => {
+import { signOut } from "@/lib/actions/auth.actions";
+const UserDropdown = ({ user }: { user: User  }) => {
   const router = useRouter();
 
   const handleSignOut = async () => {
+    await signOut();
     router.push("/sign-in");
   };
 
-  const user = { name: "John", email: "john@example.com" };
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
